@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Valentine?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffe4ec, #fff);
+      color: #333;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      padding: 60px 20px;
+      max-width: 700px;
+      margin: auto;
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #e2558b;
+    }
+
+    h2 {
+      margin-top: 40px;
+      color: #e2558b;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      margin: 25px 0;
+    }
+
+    .heart {
+      font-size: 40px;
+      animation: beat 1.2s infinite;
+      color: #e2558b;
+      margin: 20px 0;
+    }
+
+    .box {
+      background: rgba(255,255,255,0.9);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 12px 28px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1em;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    .yes {
+      background: #e2558b;
+      color: white;
+    }
+
+    .no {
+      background: #ccc;
+      position: absolute;
+    }
+
+    #answer {
+      margin-top: 30px;
+      font-size: 1.3em;
+      color: #e2558b;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      opacity: 0.7;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Happy Valentine’s Day 🤍</h1>
+    <div class="heart">❤️</div>
+
+    <div class="box">
+      <p>
+        Hari ini bukan tentang bunga atau cokelat,<br>
+        tapi tentang kamu—<br>
+        orang yang bikin hari-hariku terasa lebih berarti.
+      </p>
+
+      <p>
+        Terima kasih sudah hadir di hidupku.<br>
+        Dengan caramu sendiri, kamu membuat hal-hal sederhana terasa istimewa.<br>
+        Tawa kamu, perhatian kecilmu, dan caramu peduli—<br>
+        itu semua berarti lebih dari yang bisa aku jelaskan dengan kata-kata.
+      </p>
+
+      <p>
+        Aku tidak menjanjikan kesempurnaan,<br>
+        tapi aku tulus ingin berjalan, belajar,<br>
+        dan tumbuh bersamamu.
+      </p>
+    </div>
+
+    <h2>Will you be my Valentine? 🤍</h2>
+    <div>
+      <button class="yes" onclick="yesClick()">Yes 💕</button>
+      <button class="no" id="noBtn" onmouseover="moveNo()">No 🙈</button>
+    </div>
+
+    <div id="answer"></div>
+
+    <footer>
+      Dibuat dengan hati 💕
+    </footer>
+  </div>
+
+  <script>
+    function yesClick() {
+      document.getElementById("answer").innerHTML =
+        "Yay! Terima kasih sudah menjadi Valentine-ku 🤍💖";
+    }
+
+    function moveNo() {
+      const btn = document.getElementById("noBtn");
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      btn.style.left = x + "px";
+      btn.style.top = y + "px";
+    }
+  </script>
+</body>
+  </html>
